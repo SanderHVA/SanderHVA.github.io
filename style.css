@@ -2,6 +2,7 @@ body{
     background: url("yo3.png")   no-repeat;
     background-size:contain;
     font-family: 'Aclonica';font-size: 22px;
+    margin: 0px;
 }
 
 @media only screen and (max-width: 1100px) and (min-width: 751px) {
@@ -59,3 +60,180 @@ body{
 .extend{
     height: 10000px;
 }
+
+
+.image {
+    background-color: #490d40;
+    background: url(https://sonorangirl.github.io/Earth-Quotes/img/google-earth-view-South-Iceland3.jpg) no-repeat center center;
+    background-size: cover;
+    height: 570px;
+    margin-top: -20px;
+  }
+  .image .heading {
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+  }
+  .image p {
+    text-align: center;
+    padding: 20px 60px;
+  }
+  .image p .btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+  .image p .btn:hover {
+    color: #c57ed3;
+    border-color: #c57ed3;
+  }
+  
+  .navbar {
+    height: 80px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    z-index: 100;
+    transition: background-color 1s ease 0s;
+  }
+  
+  .navbar-default .navbar-brand {
+    margin-top: 10px;
+    color: white;
+  }
+  .navbar-default .navbar-brand:hover {
+    color: #c57ed3;
+    border: 1px solid #c57ed3;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: white;
+    margin: 10px 5px 5px 5px;
+  }
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:active,
+  .navbar-default .navbar-nav > li > a:focus {
+    color: #c57ed3;
+    border: 1px solid #c57ed3;
+  }
+  .navbar-default .navbar-nav > li > a:visited {
+    color: #c57ed3;
+    text-decoration: none;
+  }
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    color: #c57ed3;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: #c57ed3;
+  }
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #490d40;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    color: #c57ed3;
+    background-color: #c57ed3;
+  }
+  .navbar-default .navbar-collapse.collapse.in ul {
+    background-color: #490d40;
+  }
+  
+  /* Solid class attached on scroll past first section */
+  .navbar.solid {
+    background-color: #490d40;
+    transition: background-color 1s ease 0s;
+    box-shadow: 0 0 4px grey;
+  }
+  .navbar.solid .navbar-brand {
+    color: #c57ed3;
+    transition: color 1s ease 0s;
+  }
+  .navbar.solid .navbar-nav > li > a {
+    color: #c57ed3;
+    transition: color 1s ease 0s;
+  }
+  
+  .about {
+    background-color: #c57ed3;
+    color: #490d40;
+    height: 600px;
+    text-align: center;
+    margin-top: -20px;
+  }
+  .about h2 {
+    padding-top: 220px;
+  }
+  .about p {
+    padding: 20px 80px;
+  }
+
+
+
+
+
+  /* nav */
+  
+  
+  .topnav {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    
+  }
+  
+  .topnav a.active {
+    text-decoration: underline;
+  }
+  
+  .topnav .icon {
+    display: none;
+    
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .solid{
+    background-color: white;
+    transition: 1s;
+  }
+  .black{
+    color: black;
+  }
+
+
