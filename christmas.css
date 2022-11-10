@@ -1,0 +1,86 @@
+@font-face {
+    font-family: custom_font;
+    
+    src: url(Merry\ Christmas\ 2021.ttf);
+}
+
+@font-face {
+    font-family: yo;
+    /* src: url(christmas_font.otf); */
+    src: url(Christmas\ Squad\ -\ Personal\ Use.otf);
+}
+
+body { 
+    background: url("https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0px;
+    font-family: custom_font;
+}
+
+.container{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.left-container {
+    width: 50%;
+    height: 100%;
+    float:left; 
+    /* background-color: red; */
+}
+
+.right-container{
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+.video1,.video2{
+    width: 60%;
+}
+
+button {
+    width: 60%;
+    background-color: darkred;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+}
+
+.title{
+    color: #EEEBDD;
+    font-size: 60px;
+    font-family: yo;
+}
+
+.song_title1, .song_title2{
+    color: #EEEBDD;
+    font-size: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+.singer{
+    color: #810000;
+
+
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .left-container, .right-container{
+        width: 100%;
+        height: 50%;
+    }
+
+    .container{
+        height: auto
+    }
+}
