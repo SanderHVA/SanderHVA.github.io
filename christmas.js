@@ -9,6 +9,8 @@ let singer1 = document.getElementById("singer1")
 let singer2 = document.getElementById("singer2")
 let round_indicator = document.getElementById("round_indicator")
 
+
+
 let youtube_prefix = "https://www.youtube.com/embed/"
 
 
@@ -191,6 +193,32 @@ function main(){
         let winner = determineWinner()
         if(winner != false){
             console.log(winner + " heeft gewonnen!")
+            body.innerHTML = `
+        <div class="winner-container">
+            <div class="winner-inner">
+                <div class="winner-left-container">
+                    <img id="cup-img" src="cup.png">
+                </div>
+                <div class="winner-right-container">
+                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    
+        <div class="second-container">
+            <div id="second-inner">
+                <div id="first">
+                    <p class="places-text">2</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div id="second">
+                    <p class="places-text">3</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+            `
+            console.log("abc")
         }else{
             renderNewNumbers(round_counter)
         }
@@ -209,6 +237,32 @@ function main(){
         let winner = determineWinner()
         if(winner != false){
             console.log(winner + " heeft gewonnen!")
+            body.innerHTML = `
+        <div class="winner-container">
+            <div class="winner-inner">
+                <div class="winner-left-container">
+                    <img id="cup-img" src="cup.png">
+                </div>
+                <div class="winner-right-container">
+                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    
+        <div class="second-container">
+            <div id="second-inner">
+                <div id="first">
+                    <p class="places-text">2</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div id="second">
+                    <p class="places-text">3</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+            `
+            console.log("abc")
         }else{
             renderNewNumbers(round_counter)
         }
@@ -240,7 +294,7 @@ function renderNewNumbers(round_counter){
     singer2.innerText = singers[right_item_index]
 
     //round indicator
-    round_indicator.innerText = `Round ${round_counter}/${nameList.length / 2}`;
+    round_indicator.innerText = `Round ${round_counter}/${nameList.length}`;
  
     //return [left_item_index, right_item_index]
 
