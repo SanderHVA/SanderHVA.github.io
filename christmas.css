@@ -38,7 +38,7 @@ body {
     overflow: hidden; /* if you don't want #second to wrap below #first */
 }
 
-.video1,.video2{
+#video1,#video2{
     width: 60%;
 }
 
@@ -56,20 +56,18 @@ button {
     color: #EEEBDD;
     font-size: 60px;
     font-family: yo;
+    margin-bottom: 20px;
 }
 
 #song_title1, #song_title2{
     color: #EEEBDD;
-    font-size: 20px;
+    font-size: 25px;
     width: 70%;
     margin: auto;
 }
 
-.singer{
-    color: #810000;
-
-
-
+#singer1, #singer2{
+    color: #FFE4AE;
 }
 
 
@@ -82,5 +80,9 @@ button {
 
     .container{
         height: auto
+    }
+
+    .left-container {
+        margin-bottom: 50px;
     }
 }

@@ -7,6 +7,7 @@ let video1 = document.getElementById("video1")
 let video2 = document.getElementById("video2")
 let singer1 = document.getElementById("singer1")
 let singer2 = document.getElementById("singer2")
+let round_indicator = document.getElementById("round_indicator")
 
 let youtube_prefix = "https://www.youtube.com/embed/"
 
@@ -98,6 +99,8 @@ let singers = [
 
 
 function main(){
+
+    let round_counter = 0;
     
     let [left_item_index, right_item_index] = twoRandomNumbers();
 
@@ -112,6 +115,10 @@ function main(){
     //singer name
     singer1.innerText = singers[left_item_index]
     singer2.innerText = singers[right_item_index]
+
+    //round indicator
+    round_counter++
+    round_indicator.innerText = `Round ${round_counter}/${nameList.length / 2}`;
     
     button1.addEventListener("click", e=> {
 
@@ -173,6 +180,9 @@ function renderNewNumbers(){
     //singers
     singer1.innerText = singers[left_item_index]
     singer2.innerText = singers[right_item_index]
+
+    //round indicator
+    round_indicator.innerText = `Round ${round_counter+=1}/${nameList.length / 2}`;
  
     //return [left_item_index, right_item_index]
 
