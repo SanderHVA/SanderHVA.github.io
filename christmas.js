@@ -17,68 +17,68 @@ let nameList = [
     "Last Christmas", 
     "Santa Tell me", 
     "Rockin' Around The Christmas Tree", 
-    // "It's Beginning To Look A Lot Like Christmas",
-    // "Jingle Bell Rock",
-    // "It's the Most Wonderful Time of the Year",
-    // "Let it snow!",
-    // "Underneath the Tree",
-    // "Sleigh Ride",
-    // "Feliz Navidad",
-    // "snowman",
-    // "Holly Jolly Christmas",
-    // "Mistletoe",
-    // "Wonderful Christmastime",
-    // "Santa Baby",
-    // "Do they know it's christmas",
-    // "Stevens - Merry Christmas Everyone",
-    // "Happy Xmas",
-    // "Let It Snow!",
-    // "Driving Home For Christmas",
-    // "Thank God It's Christmas",
-    // "Have Yourself A Merry Little Christmas",
-    // "Baby It's Cold Outside",
-    // "My Only Wish",
-    // "You Make It Feel Like Christmas",
-    // "Jingle Bell Rock",
-    // "Santa Claus Is Comin' to Town",
-    // "Step Into Christmas",
-    // "What Christmas Means To Me",
-    // "White Christmas",
-    // "Christmas Lights"
+    "It's Beginning To Look A Lot Like Christmas",
+    "Jingle Bell Rock",
+    "It's the Most Wonderful Time of the Year",
+    "Let it snow!",
+    "Underneath the Tree",
+    "Sleigh Ride",
+    "Feliz Navidad",
+    "snowman",
+    "Holly Jolly Christmas",
+    "Mistletoe",
+    "Wonderful Christmastime",
+    "Santa Baby",
+    "Do they know it's christmas",
+    "Stevens - Merry Christmas Everyone",
+    "Happy Xmas",
+    "Let It Snow!",
+    "Driving Home For Christmas",
+    "Thank God It's Christmas",
+    "Have Yourself A Merry Little Christmas",
+    "Baby It's Cold Outside",
+    "My Only Wish",
+    "You Make It Feel Like Christmas",
+    "Jingle Bell Rock",
+    "Santa Claus Is Comin' to Town",
+    "Step Into Christmas",
+    "What Christmas Means To Me",
+    "White Christmas",
+    "Christmas Lights"
 ]
-// yXQViqx6GMY - Mariah Carey - All I want for christmas is You
-// E8gmARGvPlI - Wham! - Last Christmas
-// nlR0MkrRklg - Ariana Grande - Santa Tell me
-// 1qYz7rfgLWE - Brenda Lee - Rockin' Around The Christmas Tree
-// QJ5DOWPGxwg - Michael Bublé - It's Beginning To Look A Lot Like Christmas
-// Gqwk7uR1BI8 - Bobby Helms - Jingle Bell Rock
-// AN_R4pR1hck - Andy Williams - It's the Most Wonderful Time of the Year 
-// Rnil5LyK_B0 - Dean Martin - Let it snow!
-// YfF10ow4YEo - Kelly Clarkson - Underneath the Tree
-// XZTzai1H9DM - The Ronettes - Sleigh Ride
-// N8NcQzMQN_U - José Feliciano - Feliz Navidad
-// gset79KMmt0 - Sia - snowman
-// Dkq3LD-4pmM - Michael Bublé - Holly Jolly Christmas
-// LUjn3RpkcKY - Justin Bieber - Mistletoe
-// 94Ye-3C1FC8 - Paul McCartney - Wonderful Christmastime
-// HTCFi4l3nkY - Eartha Kitt - Santa Baby
-// j3fSknbR7Y4 - Band Aid - Do they know it's christmas
-// N-PyWfVkjZc - Shakin' Stevens - Merry Christmas Everyone
-// flA5ndOyZbI - John Lennon - Happy Xmas
-// sE3uRRFVsmc - Frank Sinatra - Let It Snow!
-// DDt3u2Ev1cI - Chris Rea ~ Driving Home For Christmas
-// qw2TD91Nytg - Queen - Thank God It's Christmas
-// rnEqv8WcVq8 - Sam Smith - Have Yourself A Merry Little Christmas
-// 6bbuBubZ1yE - Idina Menzel & Michael Bublé - Baby It's Cold Outside
-// _MzumcY3lpk - Britney Spears - My Only Wish
-// 3ZT9_H4-hbM - Gwen Stefani - You Make It Feel Like Christmas
-// 5vyMuxxLsD0 - Daryl Hall & John Oates - Jingle Bell Rock
-// -
-// OsyxFkYZ-aU - Mariah Carey - Santa Claus Is Comin' to Town
-// IbRtGMm96F8 - Elton John - Step Into Christmas
-// wtgGBgpNcIo - Stevie Wonder - What Christmas Means To Me
-// v5ryZdpEHqM - Bing Crosby - White Christmas
-// z1rYmzQ8C9Q - Coldplay - Christmas Lights
+// "yXQViqx6GMY", - "Mariah Carey - All I want for christmas is You
+// "E8gmARGvPlI", - "Wham! - Last Christmas
+// "nlR0MkrRklg", - "Ariana Grande - Santa Tell me
+// "1qYz7rfgLWE", - "Brenda Lee - Rockin' Around The Christmas Tree
+// "QJ5DOWPGxwg", - "Michael Bublé - It's Beginning To Look A Lot Like Christmas
+// "Gqwk7uR1BI8", - "Bobby Helms - Jingle Bell Rock
+// "AN_R4pR1hck", - "Andy Williams - It's the Most Wonderful Time of the Year 
+// "Rnil5LyK_B0", - "Dean Martin - Let it snow!
+// "YfF10ow4YEo", - "Kelly Clarkson - Underneath the Tree
+// "XZTzai1H9DM", - "The Ronettes - Sleigh Ride
+// "N8NcQzMQN_U", - "José Feliciano - Feliz Navidad
+// "gset79KMmt0", - "Sia - snowman
+// "Dkq3LD-4pmM", - "Michael Bublé - Holly Jolly Christmas
+// "LUjn3RpkcKY", - "Justin Bieber - Mistletoe
+// "94Ye-3C1FC8", - "Paul McCartney - Wonderful Christmastime
+// "HTCFi4l3nkY", - "Eartha Kitt - Santa Baby
+// "j3fSknbR7Y4", - "Band Aid - Do they know it's christmas
+// "N-PyWfVkjZc", - "Shakin' Stevens - Merry Christmas Everyone
+// "flA5ndOyZbI", - "John Lennon - Happy Xmas
+// "sE3uRRFVsmc", - "Frank Sinatra - Let It Snow!
+// "DDt3u2Ev1cI", - "Chris Rea ~ Driving Home For Christmas
+// "qw2TD91Nytg", - "Queen - Thank God It's Christmas
+// "rnEqv8WcVq8", - "Sam Smith - Have Yourself A Merry Little Christmas
+// "6bbuBubZ1yE", - "Idina Menzel & Michael Bublé - Baby It's Cold Outside
+// "_MzumcY3lpk", - "Britney Spears - My Only Wish
+// "3ZT9_H4-hbM", - "Gwen Stefani - You Make It Feel Like Christmas
+// "5vyMuxxLsD0", - "Daryl Hall & John Oates - Jingle Bell Rock
+// "-","
+// "OsyxFkYZ-aU", - "Mariah Carey - Santa Claus Is Comin' to Town
+// "IbRtGMm96F8", - "Elton John - Step Into Christmas
+// "wtgGBgpNcIo", - "Stevie Wonder - What Christmas Means To Me
+// "v5ryZdpEHqM", - "Bing Crosby - White Christmas
+// "z1rYmzQ8C9Q", - "Coldplay - Christmas Lights
 
 
 let overigeList = nameList
@@ -88,13 +88,69 @@ let urls = [
     "E8gmARGvPlI",
     "nlR0MkrRklg",
     "1qYz7rfgLWE",
+    "QJ5DOWPGxwg",
+    "Gqwk7uR1BI8",
+    "AN_R4pR1hck",
+    "Rnil5LyK_B0",
+    "YfF10ow4YEo",
+    "XZTzai1H9DM",
+    "N8NcQzMQN_U",
+    "gset79KMmt0",
+    "Dkq3LD-4pmM",
+    "LUjn3RpkcKY",
+    "94Ye-3C1FC8",
+    "HTCFi4l3nkY",
+    "j3fSknbR7Y4",
+    "N-PyWfVkjZc",
+    "flA5ndOyZbI",
+    "sE3uRRFVsmc",
+    "DDt3u2Ev1cI",
+    "qw2TD91Nytg",
+    "rnEqv8WcVq8",
+    "6bbuBubZ1yE",
+    "_MzumcY3lpk",
+    "3ZT9_H4-hbM",
+    "5vyMuxxLsD0",
+    "OsyxFkYZ-aU",
+    "IbRtGMm96F8",
+    "wtgGBgpNcIo",
+    "v5ryZdpEHqM",
+    "z1rYmzQ8C9Q",
 ]
 
 let singers = [
     "Mariah Carey",
     "Wham!",
-    "Ariana Grande",
-    "Brenda Lee"
+    "Ariana Grande" ,
+    "Brenda Lee" ,
+    "Michael Bublé" ,
+    "Bobby Helms" ,
+    "Andy Williams" ,
+    "Dean Martin" ,
+    "Kelly Clarkson" ,
+    "The Ronettes" ,
+    "José Feliciano" ,
+    "Sia" ,
+    "Michael Bublé" ,
+    "Justin Bieber" ,
+    "Paul McCartney" ,
+    "Eartha Kitt" ,
+    "Band Aid" ,
+    "Shakin' Stevens" ,
+    "John Lennon" ,
+    "Frank Sinatra" ,
+    "Chris Rea" ,
+    "Queen" ,
+    "Sam Smith" ,
+    "Idina Menzel & Michael Bublé" ,
+    "Britney Spears" ,
+    "Gwen Stefani" ,
+    "Daryl Hall & John Oates" ,
+    "Mariah Carey" ,
+    "Elton John" ,
+    "Stevie Wonder" ,
+    "Bing Crosby" ,
+    "Coldplay"
 ]
 
 
@@ -124,7 +180,7 @@ function main(){
 
         
 
-
+        round_counter++
 
         let current_name = name2.innerText
         // current_name = parseInt(current_name);
@@ -136,12 +192,14 @@ function main(){
         if(winner != false){
             console.log(winner + " heeft gewonnen!")
         }else{
-            renderNewNumbers()
+            renderNewNumbers(round_counter)
         }
         
     });
     
     button2.addEventListener("click", e=> {
+        round_counter++
+
         let current_name = name1.innerText
         // current_name = parseInt(current_name);
         let current_index = overigeList.indexOf(current_name)
@@ -152,7 +210,7 @@ function main(){
         if(winner != false){
             console.log(winner + " heeft gewonnen!")
         }else{
-            renderNewNumbers()
+            renderNewNumbers(round_counter)
         }
         
     });
@@ -165,7 +223,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-function renderNewNumbers(){
+function renderNewNumbers(round_counter){
     
     
     [left_item_index, right_item_index] = twoRandomNumbers();
@@ -182,7 +240,7 @@ function renderNewNumbers(){
     singer2.innerText = singers[right_item_index]
 
     //round indicator
-    round_indicator.innerText = `Round ${round_counter+=1}/${nameList.length / 2}`;
+    round_indicator.innerText = `Round ${round_counter}/${nameList.length / 2}`;
  
     //return [left_item_index, right_item_index]
 

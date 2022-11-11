@@ -85,4 +85,14 @@ button {
     .left-container {
         margin-bottom: 50px;
     }
+
+    #video1, #video2{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    #video1, #video2{
+        width: 80%;
+    }
 }
