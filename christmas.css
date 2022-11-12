@@ -47,9 +47,11 @@ button {
     background-color: darkred;
     padding: 15px;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 3px solid white;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 .title{
@@ -69,6 +71,41 @@ button {
 #singer1, #singer2{
     color: #FFE4AE;
 }
+
+
+#video1, #video2{
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+
+
+  @media only screen and (max-width: 800px) {
+    #overlay{
+        display: none;
+    }
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+    
+
+}
+
+.vs_animation{
+    -webkit-animation:spin 0.5s linear ;
+    -moz-animation:spin 0.5s linear ;
+    animation:spin 0.5s linear ;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
 
@@ -97,16 +134,16 @@ button {
     }
 
     #cup-img {
-        width: 20%;
+        width: 50%;
     }
     
     .winner-left-container{
         width: 100%;
-        height: 30%;
+        /* height: 30%; */
+        height: 200px;
     }
     .winner-right-container{
         width: 100%;
-        height: 70%;
     }
 
 
@@ -125,6 +162,18 @@ button {
 
     .winner-left-container{
         width: 100%;
+    }
+
+    /* ----------- */
+
+    .winner-inner {
+        width: 85%;
+        margin: auto;
+        overflow: hidden; /* will contain if #first is longer than #second */
+    }
+
+    #winner-video2{
+        height: none;
     }
 }
 
@@ -151,7 +200,7 @@ body{
 } */
 
 #cup-img{
-    width: 40%;
+    width: 70%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -199,13 +248,14 @@ body{
 .winner-right-container {
     width: 70%;
     height: 100%;
-    background-color: gray;
     overflow: hidden; /* if you don't want #second to wrap below #first */
 }
 
 #winner-video2{
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 98%;
+    border: 3px solid #FCB929;
+    border-radius: 20px;
 }
 
 /* ---------------------------------------- */
@@ -241,9 +291,40 @@ body{
 }
 
 .places-text{
-    color: black;
-    font-size: 40px;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    margin: auto;
 }
+
+.second_place_text{
+    border: 3px solid #C0C0C0;
+    color: #C0C0C0;
+}
+
+.third_place_text{
+    border: 3px solid #CD7F32;
+    color: #CD7F32;
+}
+
+
+.second_place_vid{
+    border: 3px solid #C0C0C0;
+    border-radius: 20px;
+}
+
+.third_place_vid{
+    border-radius: 20px;
+    border: 3px solid #CD7F32;
+}
+
+
+
+
 
 @media only screen and (max-width: 1000px) {
     #second-inner {
@@ -251,3 +332,57 @@ body{
         width: 90%;
     }
 }
+
+
+@media only screen and (min-width: 700px) {
+    #song_title2, #song_title1{
+        min-height: 62px;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 900px) {
+    .slide-in {
+        z-index: 10; /* to position it in front of the other content */
+        position: relative;
+        overflow: hidden; /* to prevent scrollbar appearing */
+      }
+      
+      .slide-in.from-left {
+        left: 0;
+      }
+      
+      .slide-in.from-right {
+        right: 0;
+      }
+      
+      .slide-in-content {
+        padding: 5px 20px;
+        transition: transform .5s ease; /* our nice transition */
+      }
+      
+      .slide-in.from-left .slide-in-content {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+      }
+      
+      .slide-in.from-right .slide-in-content {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+      }
+      
+      .slide-in.show .slide-in-content {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+      }
+}
+
+
+

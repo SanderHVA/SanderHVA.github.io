@@ -8,32 +8,43 @@
     <link rel="stylesheet" href="christmas.css">
     <script defer src="christmas.js"></script>
     <link rel="icon" type="image/png" href="christmasicon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 
     <div class="container">
         <p class="title">Wich one is better?</p>
         <p id="round_indicator"></p>
-        <div class="left-container">
-            
-            <div class="iframe-container">
-                <p id="song_title1"></p>
-                <p id="singer1"></p>
-                <iframe id="video1" width="420" height="315" src="https://www.youtube.com/embed/yXQViqx6GMY" frameborder="0" allowfullscreen></iframe>
+        <div class="left-container slide-in from-left">
+            <div class="slide-in-content">
+                <div class="iframe-container">
+                    <p id="song_title1"></p>
+                    <p id="singer1"></p>
+                    <iframe id="video1" width="420" height="315" src="https://www.youtube.com/embed/yXQViqx6GMY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
+                <button id="button1">CHOOSE</button>
             </div>
             
-            <button id="button1">CHOOSE</button>
         </div>
-        <div class="right-container">
-            <p id="song_title2"></p>
-            <p id="singer2"></p>
-            <div class="iframe-container">
-                <iframe id="video2" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+        <div class="right-container slide-in from-right">
+            <div class="slide-in-content">
+                <p id="song_title2"></p>
+                <p id="singer2"></p>
+                <div class="iframe-container">
+                    <iframe id="video2" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
+                <button id="button2">CHOOSE</button>
             </div>
             
-            <button id="button2">CHOOSE</button>
         </div>
     </div>
+
+    <img id="overlay" class="" src="vsimg.png">
+
+
+    
     
 </body>
 </html>
