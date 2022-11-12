@@ -233,6 +233,18 @@ function main(){
         let winner = determineWinner()
         if(winner != false){
             body.innerHTML = `
+            <style>
+                p{
+                    color: white;
+                }
+                .places-text{
+                    color: white;
+                }
+                .winner-container{
+                    text-align: center;
+                    margin-top: 40px;
+                }
+            </style>
         <div class="winner-container">
             <p>${winner}</p>
             <div class="winner-inner">
