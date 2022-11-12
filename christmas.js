@@ -9,7 +9,7 @@ let singer1 = document.getElementById("singer1")
 let singer2 = document.getElementById("singer2")
 let round_indicator = document.getElementById("round_indicator")
 
-
+let topdrie = []
 
 let youtube_prefix = "https://www.youtube.com/embed/"
 
@@ -19,34 +19,34 @@ let nameList = [
     "Last Christmas", 
     "Santa Tell me", 
     "Rockin' Around The Christmas Tree", 
-    "It's Beginning To Look A Lot Like Christmas",
-    "Jingle Bell Rock",
-    "It's the Most Wonderful Time of the Year",
-    "Let it snow!",
-    "Underneath the Tree",
-    "Sleigh Ride",
-    "Feliz Navidad",
-    "snowman",
-    "Holly Jolly Christmas",
-    "Mistletoe",
-    "Wonderful Christmastime",
-    "Santa Baby",
-    "Do they know it's christmas",
-    "Stevens - Merry Christmas Everyone",
-    "Happy Xmas",
-    "Let It Snow!",
-    "Driving Home For Christmas",
-    "Thank God It's Christmas",
-    "Have Yourself A Merry Little Christmas",
-    "Baby It's Cold Outside",
-    "My Only Wish",
-    "You Make It Feel Like Christmas",
-    "Jingle Bell Rock",
-    "Santa Claus Is Comin' to Town",
-    "Step Into Christmas",
-    "What Christmas Means To Me",
-    "White Christmas",
-    "Christmas Lights"
+    // "It's Beginning To Look A Lot Like Christmas",
+    // "Jingle Bell Rock",
+    // "It's the Most Wonderful Time of the Year",
+    // "Let it snow!",
+    // "Underneath the Tree",
+    // "Sleigh Ride",
+    // "Feliz Navidad",
+    // "snowman",
+    // "Holly Jolly Christmas",
+    // "Mistletoe",
+    // "Wonderful Christmastime",
+    // "Santa Baby",
+    // "Do they know it's christmas",
+    // "Stevens - Merry Christmas Everyone",
+    // "Happy Xmas",
+    // "Let It Snow!",
+    // "Driving Home For Christmas",
+    // "Thank God It's Christmas",
+    // "Have Yourself A Merry Little Christmas",
+    // "Baby It's Cold Outside",
+    // "My Only Wish",
+    // "You Make It Feel Like Christmas",
+    // "Jingle Bell Rock",
+    // "Santa Claus Is Comin' to Town",
+    // "Step Into Christmas",
+    // "What Christmas Means To Me",
+    // "White Christmas",
+    // "Christmas Lights"
 ]
 // "yXQViqx6GMY", - "Mariah Carey - All I want for christmas is You
 // "E8gmARGvPlI", - "Wham! - Last Christmas
@@ -83,7 +83,40 @@ let nameList = [
 // "z1rYmzQ8C9Q", - "Coldplay - Christmas Lights
 
 
-let overigeList = nameList
+let overigeList = [
+    "All I want for christmas is You", 
+    "Last Christmas", 
+    "Santa Tell me", 
+    "Rockin' Around The Christmas Tree", 
+    // "It's Beginning To Look A Lot Like Christmas",
+    // "Jingle Bell Rock",
+    // "It's the Most Wonderful Time of the Year",
+    // "Let it snow!",
+    // "Underneath the Tree",
+    // "Sleigh Ride",
+    // "Feliz Navidad",
+    // "snowman",
+    // "Holly Jolly Christmas",
+    // "Mistletoe",
+    // "Wonderful Christmastime",
+    // "Santa Baby",
+    // "Do they know it's christmas",
+    // "Stevens - Merry Christmas Everyone",
+    // "Happy Xmas",
+    // "Let It Snow!",
+    // "Driving Home For Christmas",
+    // "Thank God It's Christmas",
+    // "Have Yourself A Merry Little Christmas",
+    // "Baby It's Cold Outside",
+    // "My Only Wish",
+    // "You Make It Feel Like Christmas",
+    // "Jingle Bell Rock",
+    // "Santa Claus Is Comin' to Town",
+    // "Step Into Christmas",
+    // "What Christmas Means To Me",
+    // "White Christmas",
+    // "Christmas Lights"
+]
 
 let urls = [
     "yXQViqx6GMY",
@@ -157,6 +190,7 @@ let singers = [
 
 
 function main(){
+    let topdrie_counter = 0
 
     let round_counter = 0;
     
@@ -176,13 +210,19 @@ function main(){
 
     //round indicator
     round_counter++
-    round_indicator.innerText = `Round ${round_counter}/${nameList.length / 2}`;
+    round_indicator.innerText = `Round ${round_counter}/${nameList.length}`;
     
     button1.addEventListener("click", e=> {
+        
+        round_counter++
+        console.log(round_counter)
+        if(round_counter-1 == nameList.length - 2 || round_counter-1 == nameList.length-1){
+            console.log("GEPUSHED")
+            topdrie.push(name2.innerText)
+        }
+        console.log(topdrie)
 
         
-
-        round_counter++
 
         let current_name = name2.innerText
         // current_name = parseInt(current_name);
@@ -192,15 +232,15 @@ function main(){
 
         let winner = determineWinner()
         if(winner != false){
-            console.log(winner + " heeft gewonnen!")
             body.innerHTML = `
         <div class="winner-container">
+            <p>${winner}</p>
             <div class="winner-inner">
                 <div class="winner-left-container">
                     <img id="cup-img" src="cup.png">
                 </div>
                 <div class="winner-right-container">
-                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -209,11 +249,13 @@ function main(){
             <div id="second-inner">
                 <div id="first">
                     <p class="places-text">2</p>
-                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                    <p>${nameList[nameList.indexOf(topdrie[1])]}</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[1])]}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div id="second">
                     <p class="places-text">3</p>
-                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                    <p>${nameList[nameList.indexOf(topdrie[0])]}</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[0])]}" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -227,6 +269,14 @@ function main(){
     
     button2.addEventListener("click", e=> {
         round_counter++
+        console.log(round_counter)
+        if(round_counter-1 == nameList.length - 2 || round_counter-1 == nameList.length-1){
+            console.log("GEPUSHED")
+            topdrie.push(name1.innerText)
+        }
+        console.log(topdrie)
+
+        
 
         let current_name = name1.innerText
         // current_name = parseInt(current_name);
@@ -237,14 +287,17 @@ function main(){
         let winner = determineWinner()
         if(winner != false){
             console.log(winner + " heeft gewonnen!")
+            console.log(topdrie[1])
+            console.log(topdrie[0])
             body.innerHTML = `
         <div class="winner-container">
+            <p>${winner}</p>
             <div class="winner-inner">
                 <div class="winner-left-container">
                     <img id="cup-img" src="cup.png">
                 </div>
                 <div class="winner-right-container">
-                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -253,11 +306,13 @@ function main(){
             <div id="second-inner">
                 <div id="first">
                     <p class="places-text">2</p>
-                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                    <p>${nameList[nameList.indexOf(topdrie[1])]}</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[1])]}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div id="second">
                     <p class="places-text">3</p>
-                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/9B7te184ZpQ" frameborder="0" allowfullscreen></iframe>
+                    <p>${nameList[nameList.indexOf(topdrie[0])]}</p>
+                    <iframe id="video3" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[0])]}" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -268,6 +323,9 @@ function main(){
         }
         
     });
+
+
+    
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -328,6 +386,7 @@ function determineWinner(){
     if(gekozenCounter == (overigeList.length - 1)){
         for(let i = 0; i < overigeList.length; i++){
             if(overigeList[i] != 0){
+                topdrie.push(overigeList[i])
                 return overigeList[i];
             }
         }
