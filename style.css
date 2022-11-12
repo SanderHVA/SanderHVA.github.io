@@ -229,11 +229,11 @@ body{
   }
 
   .solid{
-    background-color: white;
+    background-color: lightgreen;
     transition: 1s;
   }
-  .black{
+  /* .black{
     color: black;
-  }
+  } */
 
 
