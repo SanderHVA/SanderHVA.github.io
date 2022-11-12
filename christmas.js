@@ -302,6 +302,18 @@ function main(){
             console.log(topdrie[1])
             console.log(topdrie[0])
             body.innerHTML = `
+            <style>
+                p{
+                    color: white;
+                }
+                .places-text{
+                    color: white;
+                }
+                .winner-container{
+                    text-align: center;
+                    margin-top: 40px;
+                }
+            </style>
         <div class="winner-container">
             <p>${winner}</p>
             <div class="winner-inner">
