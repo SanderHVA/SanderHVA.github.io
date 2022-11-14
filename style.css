@@ -241,13 +241,13 @@ body{
   }
 
   .solid{
-    background-color: white;
+    background-color: lightgreen;
     transition: 1s;
     border-bottom: 1px solid black;
   }
-  .black{
+  /* .black{
     color: black;
-  }
+  } */
 
 
 
