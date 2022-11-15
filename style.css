@@ -5,7 +5,7 @@
 
 
 body{
-    background: url("yo3.png") no-repeat;
+    background: url("yo3_copy.png") no-repeat;
     background-size:contain; 
     /* font-family: 'Aclonica';font-size: 22px; */
     font-family: virgo;
@@ -16,7 +16,15 @@ body{
 .container{
   margin: 0px;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
+}
+
+@media only screen and (max-width: 900px){
+  .container{
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 @media only screen and (max-width: 1150px) and (min-width: 751px) {
@@ -206,7 +214,7 @@ body{
   }
   
   .topnav a:hover {
-    
+    text-decoration: underline;
   }
   
   .topnav a.active {
@@ -227,7 +235,11 @@ body{
   }
   
   @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
+    .topnav.responsive {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
     .topnav.responsive .icon {
       position: absolute;
       right: 0;
@@ -240,15 +252,7 @@ body{
     }
   }
 
-  .solid{
-    background-color: white;
-    transition: 1s;
-    border-bottom: 1px solid black;
-  }
-  /* .black{
-    color: black;
-  } */
-
+ 
 
 
 
@@ -256,72 +260,60 @@ body{
 
 /* projects */
 
-.projects{
-  height: 300px;
+h1{
   text-align: center;
-  width: 100%;
-}
-
-.row{
-  width: 80%;
-  margin: auto;
-  height: 280px;
-  margin-bottom: 50px;
 }
 
 .column{
   border: 1px solid black;
   border-radius: 20px;
   float: left;
-  margin-left: 10px;
-  width: 31%;
-  height: 100%;
+  margin: auto;
+  width: 95%;
+  height: 95%;
   
 }
 
 .img{
-  background-color: red;
-  height: 80%;
   width: 100%;
   border-radius: 20px;
 }
 
 .img img{
   width: 100%;
-  height: 100%;
+  object-fit: cover;
   border-radius: 20px;
+  border-bottom: 1px solid black;
 }
 
 .link{
-  
-  
-  
+  padding: 20px;
+}
+
+.link p{
+  color: gray;
+  font-size: 12px;
 }
 
 .link a{
-  
+  color: black !important;
 }
 
 .link-container {
-  height: 20%;
   width: 100%;
-  position: relative;
 }
 
-.link {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.projects_container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr; /*fraction*/
 }
 
-@media screen and (max-width: 600px) {
-  .column{
-    width: 100%;
-    margin-bottom: 20px;
+@media (max-width: 768px) { /*breakpoint*/
+  .projects_container {
+    grid-template-columns: none;
+    grid-gap: 30px;
   }
 }
-
-
