@@ -4,12 +4,21 @@
 $(document).ready(function() {
     // Transition effect for navbar 
     $(window).scroll(function() {
-      // checks if window is scrolled more than 500px, adds/removes solid class
+      //checks if window is scrolled more than 500px, adds/removes solid class
       if($(this).scrollTop() > 300) { 
-          $('.topnav').addClass('solid');
+          document.getElementById("myTopnav").style.cssText = 
+          `
+          background-color: white;
+          transition: 1s;
+          border-bottom: 1px solid black;
+          `;
           document.querySelectorAll('a').forEach(e => e.style.color = "black");
       } else {
-          $('.topnav').removeClass('solid');
+        document.getElementById("myTopnav").style.cssText = 
+        `
+        background-color: transparent;
+        border: none;
+        `;
           document.querySelectorAll('a').forEach(e => e.style.color = "white");
       }
     });
