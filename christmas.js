@@ -9,6 +9,8 @@ let singer1 = document.getElementById("singer1")
 let singer2 = document.getElementById("singer2")
 let round_indicator = document.getElementById("round_indicator")
 
+let chosen_numbers = []
+
 let topdrie = []
 
 let youtube_prefix = "https://www.youtube.com/embed/"
@@ -47,6 +49,8 @@ let nameList = [
     "White Christmas",
     "Christmas Lights"
 ]
+
+let default_length = nameList.length
 
 let overigeList = [
     "All I want for christmas is You", 
@@ -153,12 +157,15 @@ let singers = [
     "Coldplay"
 ]
 
+let round_counter = 0;
+let random_number_counter = 0
+
 
 function main(){
 
     $('.slide-in').toggleClass('show');
 
-    let round_counter = 0;
+    
     
     let [left_item_index, right_item_index] = twoRandomNumbers();
 
@@ -182,12 +189,12 @@ function main(){
         start_vs_animation()
         
         round_counter++
-        console.log(round_counter)
+        
         if(round_counter-1 == nameList.length - 2 || round_counter-1 == nameList.length-1){
-            console.log("GEPUSHED")
+            
             topdrie.push(name2.innerText)
         }
-        console.log(topdrie)
+        
 
         
 
@@ -195,7 +202,7 @@ function main(){
         // current_name = parseInt(current_name);
         let current_index = overigeList.indexOf(current_name)
         overigeList[current_index] = 0
-        console.log(overigeList)
+        
 
         let winner = determineWinner()
         if(winner != false){
@@ -245,7 +252,7 @@ function main(){
                     <img id="cup-img" src="winner.gif">
                 </div>
                 <div class="winner-right-container">
-                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}?autoplay=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -265,7 +272,7 @@ function main(){
             </div>
         </div>
             `
-            console.log("abc")
+            
         }else{
             renderNewNumbers(round_counter)
         }
@@ -277,26 +284,21 @@ function main(){
 
 
         round_counter++
-        console.log(round_counter)
+        
         if(round_counter-1 == nameList.length - 2 || round_counter-1 == nameList.length-1){
-            console.log("GEPUSHED")
+            
             topdrie.push(name1.innerText)
         }
-        console.log(topdrie)
-
-        
 
         let current_name = name1.innerText
         // current_name = parseInt(current_name);
         let current_index = overigeList.indexOf(current_name)
         overigeList[current_index] = 0
-        console.log(overigeList)
+        
 
         let winner = determineWinner()
         if(winner != false){
-            console.log(winner + " heeft gewonnen!")
-            console.log(topdrie[1])
-            console.log(topdrie[0])
+            
             body.innerHTML = `
             <style>
             p{
@@ -343,7 +345,7 @@ function main(){
                     <img id="cup-img" src="winner.gif">
                 </div>
                 <div class="winner-right-container">
-                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}?autoplay=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -363,15 +365,13 @@ function main(){
             </div>
         </div>
             `
-            console.log("abc")
+            
         }else{
             renderNewNumbers(round_counter)
         }
         
     });
 
-
-    
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -408,22 +408,30 @@ function twoRandomNumbers(){
     let random1 = Math.floor((Math.random() * nameList.length))
     let random2 = Math.floor((Math.random() * nameList.length))
 
-    while(random1 == random2 || overigeList[random1] == 0 || overigeList[random2] == 0){
+    random_number_counter++
+    if((random_number_counter * 2) == default_length){
+        chosen_numbers = []
+        default_length = default_length / 2
+        random_number_counter = 0
+    }
+    
+    // if(chosen_numbers.length > (nameList.length - nul_counter()) || nul_counter() >= (nameList.length - 2)){
+    //     chosen_numbers = []
+    // }
+
+    while(random1 == random2 || overigeList[random1] == 0 || overigeList[random2] == 0 || chosen_numbers.includes(random1) || chosen_numbers.includes(random2)){
         random1 = Math.floor((Math.random() * nameList.length))
         random2 = Math.floor((Math.random() * nameList.length))
     }
+
+
+    chosen_numbers.push(random1, random2)
 
     return [random1, random2];
 }
 
 function determineWinner(){
-    let gekozenCounter = 0
-    for(let i = 0; i < overigeList.length; i++){
-        
-        if(overigeList[i] == 0){
-            gekozenCounter++
-        }
-    }
+    let gekozenCounter = nul_counter()
 
     if(gekozenCounter == (overigeList.length - 1)){
         for(let i = 0; i < overigeList.length; i++){
@@ -437,6 +445,17 @@ function determineWinner(){
     }
 }
 
+function nul_counter(){
+    let gekozenCounter = 0
+    for(let i = 0; i < overigeList.length; i++){
+        
+        if(overigeList[i] == 0){
+            gekozenCounter++
+        }
+    }
+
+    return gekozenCounter
+}
 
 
 function start_vs_animation() {
