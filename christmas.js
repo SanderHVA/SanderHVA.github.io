@@ -9,6 +9,8 @@ let singer1 = document.getElementById("singer1")
 let singer2 = document.getElementById("singer2")
 let round_indicator = document.getElementById("round_indicator")
 
+console.log("why u lookin here?")
+
 let chosen_numbers = []
 
 let topdrie = []
