@@ -8,7 +8,12 @@ let video2 = document.getElementById("video2")
 let singer1 = document.getElementById("singer1")
 let singer2 = document.getElementById("singer2")
 let round_indicator = document.getElementById("round_indicator")
+let winnaar = false
 
+let shareUrl = "https://sandersekreve.me/christmas"
+
+
+  
 let topdrie = []
 
 let youtube_prefix = "https://www.youtube.com/embed/"
@@ -156,6 +161,17 @@ let singers = [
 
 function main(){
 
+    if(getCookie("winnaar") !== ""){
+
+        let winnaar = getCookie("winnaar")
+        let tweedeplek = getCookie("tweedeplek")
+        let derdeplek = getCookie("derdeplek")
+
+        console.log(winnaar)
+
+        winner_screen(winnaar, tweedeplek, derdeplek)
+    }
+
     $('.slide-in').toggleClass('show');
 
     let round_counter = 0;
@@ -197,74 +213,21 @@ function main(){
         overigeList[current_index] = 0
         console.log(overigeList)
 
-        let winner = determineWinner()
-        if(winner != false){
-            body.innerHTML = `
-            <style>
-            p{
-                color: white;
-            }
-            .winner-container{
-                text-align: center;
-                margin-top: 40px;
-            }
+        winnaar = determineWinner()
+        if(winnaar != false){
+
+            setCookie("winnaar", winnaar)
+            setCookie("tweedeplek", nameList[nameList.indexOf(topdrie[1])])
+            setCookie("derdeplek", nameList[nameList.indexOf(topdrie[0])])
+
+            let tweedeplek = nameList[nameList.indexOf(topdrie[1])]
+            let derdeplek = nameList[nameList.indexOf(topdrie[0])]
             
-            #winner{
-                font-size: 40px;
-            }
+
+            winner_screen(winnaar, tweedeplek, derdeplek)
+              
+
             
-            @media only screen and (max-width: 600px) {
-                .winner-container{
-                    height: 600px;
-                    margin-bottom: 100px;
-                }
-                .winner-inner{
-                    width: 90%;
-                    height: 500px;
-                }
-                
-                #cup-img {
-                    width: 50%;
-                }
-                
-                .winner-left-container{
-                    width: 100%;
-                    height: 200px;
-                }
-                .winner-right-container{
-                    width: 100%;
-                    height: 300px;
-                }
-                    
-            }
-            </style>
-        <div class="winner-container">
-            <p id="winner">${winner}</p>
-            <div class="winner-inner">
-                <div class="winner-left-container">
-                    <img id="cup-img" src="winner.gif">
-                </div>
-                <div class="winner-right-container">
-                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    
-        <div class="second-container">
-            <div id="second-inner">
-                <div id="first">
-                    <div class="places-text second_place_text">2</div>
-                    <p>${nameList[nameList.indexOf(topdrie[1])]}</p>
-                    <iframe id="video3" class="second_place_vid" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[1])]}" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div id="second">
-                    <div class="places-text third_place_text">3</div>
-                    <p>${nameList[nameList.indexOf(topdrie[0])]}</p>
-                    <iframe id="video3" class="third_place_vid" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[0])]}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-            `
             console.log("abc")
         }else{
             renderNewNumbers(round_counter)
@@ -274,95 +237,37 @@ function main(){
     
     button2.addEventListener("click", e=> {
         start_vs_animation()
-
-
+        
         round_counter++
         console.log(round_counter)
         if(round_counter-1 == nameList.length - 2 || round_counter-1 == nameList.length-1){
             console.log("GEPUSHED")
-            topdrie.push(name1.innerText)
+            topdrie.push(name2.innerText)
         }
         console.log(topdrie)
 
         
 
-        let current_name = name1.innerText
+        let current_name = name2.innerText
         // current_name = parseInt(current_name);
         let current_index = overigeList.indexOf(current_name)
         overigeList[current_index] = 0
         console.log(overigeList)
 
-        let winner = determineWinner()
-        if(winner != false){
-            console.log(winner + " heeft gewonnen!")
-            console.log(topdrie[1])
-            console.log(topdrie[0])
-            body.innerHTML = `
-            <style>
-            p{
-                color: white;
-            }
-            .winner-container{
-                text-align: center;
-                margin-top: 40px;
-            }
+        winnaar = determineWinner()
+        if(winnaar != false){
+
+
+            setCookie("winnaar", winnaar)
+            setCookie("tweedeplek", nameList[nameList.indexOf(topdrie[1])])
+            setCookie("derdeplek", nameList[nameList.indexOf(topdrie[0])])
+
+            let tweedeplek = nameList[nameList.indexOf(topdrie[1])]
+            let derdeplek = nameList[nameList.indexOf(topdrie[0])]
             
-            #winner{
-                font-size: 40px;
-            }
+
+            winner_screen(winnaar, tweedeplek, derdeplek)
             
-            @media only screen and (max-width: 600px) {
-                .winner-container{
-                    height: 600px;
-                    margin-bottom: 100px;
-                }
-                .winner-inner{
-                    width: 90%;
-                    height: 500px;
-                }
-                
-                #cup-img {
-                    width: 50%;
-                }
-                
-                .winner-left-container{
-                    width: 100%;
-                    height: 200px;
-                }
-                .winner-right-container{
-                    width: 100%;
-                    height: 300px;
-                }
-                    
-            }
-            </style>
-        <div class="winner-container">
-            <p id="winner">${winner}</p>
-            <div class="winner-inner">
-                <div class="winner-left-container">
-                    <img id="cup-img" src="winner.gif">
-                </div>
-                <div class="winner-right-container">
-                    <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winner)]}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    
-        <div class="second-container">
-            <div id="second-inner">
-                <div id="first">
-                    <div class="places-text second_place_text">2</div>
-                    <p>${nameList[nameList.indexOf(topdrie[1])]}</p>
-                    <iframe id="video3" class="second_place_vid" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[1])]}" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div id="second">
-                    <div class="places-text third_place_text">3</div>
-                    <p>${nameList[nameList.indexOf(topdrie[0])]}</p>
-                    <iframe id="video3" class="third_place_vid" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(topdrie[0])]}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-            `
             console.log("abc")
         }else{
             renderNewNumbers(round_counter)
@@ -444,8 +349,170 @@ function start_vs_animation() {
     overlay.classList.remove('vs_animation'); // reset animation
     void overlay.offsetWidth; // trigger reflow
     overlay.classList.add('vs_animation'); // start animation
-  }
+}
 
+function share_whatsapp(){
+        
+        window.open(
+            `https://api.whatsapp.com/send?&text=${shareUrl}%0A%0ADit is mijn top 3:%0A%0A🏆 ${getCookie("winnaar")}%0A🥈: ${getCookie("tweedeplek")}%0A🥉: ${getCookie("derdeplek")}`,
+            "_blank"
+          )
+}
+
+    
+
+function setCookie(cname, cvalue, exdays=30) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
+
+function winner_screen(winnaar, tweedeplek, derdeplek){
+    body.innerHTML = `
+    <style>
+        p{
+            color: white;
+        }
+        .winner-container{
+            text-align: center;
+        }
+        
+        #winner{
+            font-size: 40px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .winner-container{
+                height: 600px;
+                margin-bottom: 100px;
+            }
+            .winner-inner{
+                width: 90%;
+                height: 500px;
+            }
+            
+            #cup-img {
+                width: 50%;
+            }
+            
+            .winner-left-container{
+                width: 100%;
+                height: 200px;
+            }
+            .winner-right-container{
+                width: 100%;
+                height: 300px;
+            }
+                
+        }
+
+        body {
+            position: relative;
+        }
+        .topright {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            border: 3px solid green; 
+            border-radius: 100%;
+            padding: 5px;  
+            background-color: white;
+            cursor: pointer;
+        }
+        .fa-share-nodes, .fa-rotate-left{
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+
+
+
+        .topleft {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            border: 3px solid green; 
+            border-radius: 100%;
+            padding: 5px;  
+            background-color: white;
+            cursor: pointer;
+        }
+        </style>
+
+    <div class="topleft">
+        <i class="fa-solid fa-rotate-left" onclick="restart()"></i>
+    </div>
+
+    <div class="topright">
+        <i class="fa-sharp fa-solid fa-share-nodes" onclick="share_whatsapp()"></i>
+    </div>
+
+
+    <div class="winner-container">
+        <p id="winner">${winnaar}</p>
+        <div class="winner-inner">
+            <div class="winner-left-container">
+                <img id="cup-img" src="winner.gif">
+            </div>
+            <div class="winner-right-container">
+                <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winnaar)]}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+
+        
+    </div>
+
+    <div class="second-container">
+        <div id="second-inner">
+            <div id="first">
+                <div class="places-text second_place_text">2</div>
+                <p>${tweedeplek}</p>
+                <iframe id="video3" class="second_place_vid" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(tweedeplek)]}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="second">
+                <div class="places-text third_place_text">3</div>
+                <p>${derdeplek}</p>
+                <iframe id="video3" class="third_place_vid" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(derdeplek)]}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    `
+}
+
+
+function restart(){
+    removeCookie("winnaar")
+    removeCookie("tweedeplek")
+    removeCookie("derdeplek")
+
+    window.location.reload();
+}
+
+
+
+function removeCookie(cname){
+    document.cookie = cname+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
 
 
 
