@@ -389,4 +389,91 @@ body{
 }
 
 
+/* winner page */
+p{
+    color: white;
+}
+.winner-container{
+    text-align: center;
+}
+
+#winner{
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .winner-container{
+        height: auto;
+        margin-bottom: 100px;
+    }
+    .winner-inner{
+        width: 90%;
+        height: 500px;
+    }
+    
+    #cup-img {
+        width: 50%;
+    }
+    
+    .winner-left-container{
+        width: 100%;
+        height: 200px;
+    }
+    .winner-right-container{
+        width: 100%;
+        height: 300px;
+    }
+        
+}
+
+body {
+    position: relative;
+}
+.topright {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    border: 3px solid green; 
+    border-radius: 100%;
+    padding: 5px;  
+    background-color: white;
+    cursor: pointer;
+}
+.fa-share-nodes, .fa-rotate-left{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+
+
+
+.topleft {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    border: 3px solid green; 
+    border-radius: 100%;
+    padding: 5px;  
+    background-color: white;
+    cursor: pointer;
+}
+
+
+@media (min-width: 576px) {
+    #winner {
+        font-size: 30px;
+        width: 50%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .first p {
+        min-height: 40px;
+    }
+}
+
+
+
+
 

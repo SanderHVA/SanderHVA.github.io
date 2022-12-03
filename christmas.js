@@ -167,7 +167,6 @@ let singers = [
 let round_counter = 0;
 let random_number_counter = 0
 
-
 function main(){
 
     if(getCookie("winnaar") !== ""){
@@ -176,14 +175,10 @@ function main(){
         let tweedeplek = getCookie("tweedeplek")
         let derdeplek = getCookie("derdeplek")
 
-        console.log(winnaar)
-
         winner_screen(winnaar, tweedeplek, derdeplek)
     }
 
     $('.slide-in').toggleClass('show');
-
-    
     
     let [left_item_index, right_item_index] = twoRandomNumbers();
 
@@ -212,15 +207,11 @@ function main(){
             
             topdrie.push(name2.innerText)
         }
-        
-
-        
 
         let current_name = name2.innerText
         // current_name = parseInt(current_name);
         let current_index = overigeList.indexOf(current_name)
         overigeList[current_index] = 0
-        console.log(overigeList)
 
         winnaar = determineWinner()
         if(winnaar != false){
@@ -235,9 +226,6 @@ function main(){
 
             winner_screen(winnaar, tweedeplek, derdeplek)
               
-
-            
-            console.log("abc")
         }else{
             renderNewNumbers(round_counter)
         }
@@ -283,7 +271,6 @@ function main(){
         }
         
     });
-
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -309,9 +296,7 @@ function renderNewNumbers(round_counter){
 
     //round indicator
     round_indicator.innerText = `Round ${round_counter}/${nameList.length}`;
- 
-    //return [left_item_index, right_item_index]
-    
+
 }
 
 
@@ -326,16 +311,11 @@ function twoRandomNumbers(){
         default_length = default_length / 2
         random_number_counter = 0
     }
-    
-    // if(chosen_numbers.length > (nameList.length - nul_counter()) || nul_counter() >= (nameList.length - 2)){
-    //     chosen_numbers = []
-    // }
 
     while(random1 == random2 || overigeList[random1] == 0 || overigeList[random2] == 0 || chosen_numbers.includes(random1) || chosen_numbers.includes(random2)){
         random1 = Math.floor((Math.random() * nameList.length))
         random2 = Math.floor((Math.random() * nameList.length))
     }
-
 
     chosen_numbers.push(random1, random2)
 
@@ -378,7 +358,6 @@ function start_vs_animation() {
 }
 
 function share_whatsapp(){
-        
         window.open(
             `https://api.whatsapp.com/send?&text=${shareUrl}%0A%0ADit is mijn top 3:%0A%0A🏆 ${getCookie("winnaar")}%0A🥈: ${getCookie("tweedeplek")}%0A🥉: ${getCookie("derdeplek")}`,
             "_blank"
@@ -412,77 +391,6 @@ function getCookie(cname) {
 
 function winner_screen(winnaar, tweedeplek, derdeplek){
     body.innerHTML = `
-    <style>
-        p{
-            color: white;
-        }
-        .winner-container{
-            text-align: center;
-        }
-        
-        #winner{
-            font-size: 40px;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            .winner-container{
-                height: 600px;
-                margin-bottom: 100px;
-            }
-            .winner-inner{
-                width: 90%;
-                height: 500px;
-            }
-            
-            #cup-img {
-                width: 50%;
-            }
-            
-            .winner-left-container{
-                width: 100%;
-                height: 200px;
-            }
-            .winner-right-container{
-                width: 100%;
-                height: 300px;
-            }
-                
-        }
-
-        body {
-            position: relative;
-        }
-        .topright {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            border: 3px solid green; 
-            border-radius: 100%;
-            padding: 5px;  
-            background-color: white;
-            cursor: pointer;
-        }
-        .fa-share-nodes, .fa-rotate-left{
-            color: black;
-            font-size: 20px;
-            padding: 10px;
-        }
-
-
-
-
-        .topleft {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            border: 3px solid green; 
-            border-radius: 100%;
-            padding: 5px;  
-            background-color: white;
-            cursor: pointer;
-        }
-        </style>
-
     <div class="topleft">
         <i class="fa-solid fa-rotate-left" onclick="restart()"></i>
     </div>
@@ -490,7 +398,6 @@ function winner_screen(winnaar, tweedeplek, derdeplek){
     <div class="topright">
         <i class="fa-sharp fa-solid fa-share-nodes" onclick="share_whatsapp()"></i>
     </div>
-
 
     <div class="winner-container">
         <p id="winner">${winnaar}</p>
@@ -502,10 +409,6 @@ function winner_screen(winnaar, tweedeplek, derdeplek){
                 <iframe id="winner-video2" width="420" height="315" src="https://www.youtube.com/embed/${urls[nameList.indexOf(winnaar)]}" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-
-
-
-        
     </div>
 
     <div class="second-container">
