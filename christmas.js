@@ -395,6 +395,10 @@ function winner_screen(winnaar, tweedeplek, derdeplek){
         <i class="fa-solid fa-rotate-left" onclick="restart()"></i>
     </div>
 
+    <div style="top: 100px !important; padding: 17px;" class="topleft">
+        <i class="fa-solid fa-message" onclick="location.href='chat.html'"></i>
+    </div>
+
     <div class="topright">
         <i class="fa-sharp fa-solid fa-share-nodes" onclick="share_whatsapp()"></i>
     </div>
